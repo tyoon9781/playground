@@ -81,7 +81,7 @@ const Card = ({ icon, title, contents }: CardProps) => {
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 icon fas ${icon}`}
           />
         </div>
-        <div className="mx-10">
+        <div className="mx-8">
           <div className="">{title}</div>
           <div>{contents}</div>
         </div>
@@ -102,8 +102,8 @@ export default function Home() {
       <Hero />
       <div className="_contents flex flex-wrap">
         <div className="_right w-8/12 px-10 py-6">
-          <h1 className="_contents_title text-3xl my-6">Meet Django</h1>
-          <div className="text-[18px] font-sans font-light mb-6">
+          <h2 className="_contents_title text-3xl my-6">Meet Django</h2>
+          <div className="_contents text-[18px] font-sans font-light mb-6">
             Django is a high-level Python web framework that encourages rapid
             development and clean, pragmatic design. Built by experienced
             developers, it takes care of much of the hassle of web development,
@@ -125,6 +125,63 @@ export default function Home() {
             title="Exceedingly scalable."
             contents="Some of the busiest sites on the web leverage Django’s ability to quickly and flexibly scale."
           />
+          <div className="text-center">
+            <button className="w-[400px] p-5 my-5 border border-[#cfe3dc] text-[#859d94]">
+              Learn more about Django
+            </button>
+          </div>
+          <hr className="m-8" />
+          <h2 className="_contents_title text-3xl my-6">Stay in the loop</h2>
+          <div className="_contents text-[18px] font-sans mb-6">
+            Subscribe to one of our mailing lists to stay up to date with
+            everything in the Django community:
+          </div>
+          <div className="_small_card flex">
+            <div className="_left mr-4 w-1/2">
+              <h3 className="_left_title font-bold text-lg mb-2 text-[#20aa76]">
+                Using Django
+              </h3>
+              <p className="text-sm">
+                Get help with Django and follow announcements.
+              </p>
+              <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
+                Enter email
+                <i className="text-xl text-[#44b78b]  fa-regular fa-envelope"></i>
+              </div>
+              <p className="break-words text-sm ">
+                You can also subscribe by sending an email to
+                django-users+subscribe@googlegroups.com and following the
+                instructions that will be sent to you.
+              </p>
+            </div>
+            <div className="_right ml-4 w-1/2">
+              <h3 className="_right_title font-bold text-lg mb-2 text-[#20aa76]">
+                Contriubuting to Django
+              </h3>
+              <p className="text-sm">
+                Contribute to the development of Django itself.
+              </p>
+              <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
+                Enter email
+                <i className="text-xl text-[#44b78b] fa-regular fa-envelope"></i>
+              </div>
+              <p className="text-sm">
+                Before asking a question about how to contribute, read
+                Contributing to Django. Many frequently asked questions are
+                answered there.
+              </p>
+              <hr className="my-3" />
+              <p className="break-words text-sm">
+                You can also subscribe by sending an email to
+                django-developers+subscribe@googlegroups.com and following the
+                instructions that will be sent to you.
+              </p>
+            </div>
+          </div>
+          <p className="text-lg py-5">
+            We have a few other specialized lists (announce, i18n, ...). You can
+            find more information about them in our mailing list documentation.
+          </p>
         </div>
         <div className="_left w-4/12 p-10 bg-[#F8F8F8]">
           <Button contents="DownLoad" focusContents="latest release: 5.0.1" />
