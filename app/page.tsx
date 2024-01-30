@@ -90,6 +90,104 @@ const Card = ({ icon, title, contents }: CardProps) => {
   );
 };
 
+const Link = ({ link, contents }: LinkProps) => {
+  return (
+    <a href={link} className="text-orange-400">
+      {contents}
+    </a>
+  );
+};
+
+const LeftContents = () => {
+  return (
+    <>
+      <h2 className="_contents_title text-3xl my-6">Meet Django</h2>
+      <div className="_contents text-[18px] font-sans font-light mb-6">
+        Django is a high-level Python web framework that encourages rapid
+        development and clean, pragmatic design. Built by experienced
+        developers, it takes care of much of the hassle of web development, so
+        you can focus on writing your app without needing to reinvent the wheel.
+        It’s free and open source.
+      </div>
+      <Card
+        icon="fa-bolt"
+        title="Ridiculously fast."
+        contents="Django was designed to help developers take applications from concept to completion as quickly as possible."
+      />
+      <Card
+        icon="fa-lock"
+        title="Reassuringly secure."
+        contents="Django takes security seriously and helps developers avoid many common security mistakes."
+      />
+      <Card
+        icon="fa-dashboard"
+        title="Exceedingly scalable."
+        contents="Some of the busiest sites on the web leverage Django’s ability to quickly and flexibly scale."
+      />
+      <div className="text-center">
+        <button className="w-[400px] p-5 my-5 border border-[#cfe3dc] text-[#859d94]">
+          Learn more about Django
+        </button>
+      </div>
+      <hr className="m-8" />
+      <h2 className="_contents_title text-3xl my-6">Stay in the loop</h2>
+      <div className="_contents text-[18px] font-sans mb-6">
+        Subscribe to one of our mailing lists to stay up to date with everything
+        in the Django community:
+      </div>
+      <div className="_small_card flex">
+        <div className="_left mr-4 w-1/2">
+          <h3 className="_left_title font-bold text-lg mb-2 text-[#20aa76]">
+            Using Django
+          </h3>
+          <p className="text-sm">
+            Get help with Django and follow announcements.
+          </p>
+          <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
+            Enter email
+            <i className="text-xl text-[#44b78b]  fa-regular fa-envelope"></i>
+          </div>
+          <p className="break-words text-sm">
+            You can also subscribe by sending an email to{" "}
+            <Link link="#" contents="django-users+subscribe@googlegroups.com" />{" "}
+            and following the instructions that will be sent to you.
+          </p>
+        </div>
+        <div className="_right ml-4 w-1/2">
+          <h3 className="_right_title font-bold text-lg mb-2 text-[#20aa76]">
+            Contriubuting to Django
+          </h3>
+          <p className="text-sm">
+            Contribute to the development of Django itself.
+          </p>
+          <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
+            Enter email
+            <i className="text-xl text-[#44b78b] fa-regular fa-envelope"></i>
+          </div>
+          <p className="text-sm">
+            Before asking a question about how to contribute, read{" "}
+            <Link link="#" contents="Contributing to Django." /> Many frequently
+            asked questions are answered there.
+          </p>
+          <hr className="my-3" />
+          <p className="break-words text-sm">
+            You can also subscribe by sending an email to{" "}
+            <Link
+              link="#"
+              contents="django-developers+subscribe@googlegroups.com"
+            />{" "}
+            and following the instructions that will be sent to you.
+          </p>
+        </div>
+      </div>
+      <p className="text-lg py-5">
+        We have a few other specialized lists (announce, i18n, ...). You can
+        find more information about them in our mailing list documentation.
+      </p>
+    </>
+  );
+};
+
 export default function Home() {
   return (
     <>
@@ -102,89 +200,46 @@ export default function Home() {
       <Hero />
       <div className="_contents flex flex-wrap">
         <div className="_right w-8/12 px-10 py-6">
-          <h2 className="_contents_title text-3xl my-6">Meet Django</h2>
-          <div className="_contents text-[18px] font-sans font-light mb-6">
-            Django is a high-level Python web framework that encourages rapid
-            development and clean, pragmatic design. Built by experienced
-            developers, it takes care of much of the hassle of web development,
-            so you can focus on writing your app without needing to reinvent the
-            wheel. It’s free and open source.
-          </div>
-          <Card
-            icon="fa-bolt"
-            title="Ridiculously fast."
-            contents="Django was designed to help developers take applications from concept to completion as quickly as possible."
-          />
-          <Card
-            icon="fa-lock"
-            title="Reassuringly secure."
-            contents="Django takes security seriously and helps developers avoid many common security mistakes."
-          />
-          <Card
-            icon="fa-dashboard"
-            title="Exceedingly scalable."
-            contents="Some of the busiest sites on the web leverage Django’s ability to quickly and flexibly scale."
-          />
-          <div className="text-center">
-            <button className="w-[400px] p-5 my-5 border border-[#cfe3dc] text-[#859d94]">
-              Learn more about Django
-            </button>
-          </div>
-          <hr className="m-8" />
-          <h2 className="_contents_title text-3xl my-6">Stay in the loop</h2>
-          <div className="_contents text-[18px] font-sans mb-6">
-            Subscribe to one of our mailing lists to stay up to date with
-            everything in the Django community:
-          </div>
-          <div className="_small_card flex">
-            <div className="_left mr-4 w-1/2">
-              <h3 className="_left_title font-bold text-lg mb-2 text-[#20aa76]">
-                Using Django
-              </h3>
-              <p className="text-sm">
-                Get help with Django and follow announcements.
-              </p>
-              <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
-                Enter email
-                <i className="text-xl text-[#44b78b]  fa-regular fa-envelope"></i>
-              </div>
-              <p className="break-words text-sm ">
-                You can also subscribe by sending an email to
-                django-users+subscribe@googlegroups.com and following the
-                instructions that will be sent to you.
-              </p>
-            </div>
-            <div className="_right ml-4 w-1/2">
-              <h3 className="_right_title font-bold text-lg mb-2 text-[#20aa76]">
-                Contriubuting to Django
-              </h3>
-              <p className="text-sm">
-                Contribute to the development of Django itself.
-              </p>
-              <div className="my-3 p-3 border border-[#cfe3dc] flex justify-between items-center">
-                Enter email
-                <i className="text-xl text-[#44b78b] fa-regular fa-envelope"></i>
-              </div>
-              <p className="text-sm">
-                Before asking a question about how to contribute, read
-                Contributing to Django. Many frequently asked questions are
-                answered there.
-              </p>
-              <hr className="my-3" />
-              <p className="break-words text-sm">
-                You can also subscribe by sending an email to
-                django-developers+subscribe@googlegroups.com and following the
-                instructions that will be sent to you.
-              </p>
-            </div>
-          </div>
-          <p className="text-lg py-5">
-            We have a few other specialized lists (announce, i18n, ...). You can
-            find more information about them in our mailing list documentation.
-          </p>
+          <LeftContents />
         </div>
         <div className="_left w-4/12 p-10 bg-[#F8F8F8]">
           <Button contents="DownLoad" focusContents="latest release: 5.0.1" />
+          <div className="text-center text-xs font-bold p-3 uppercase">
+            Django Documentation {">"}
+          </div>
+          <div>
+            <h3>Support Django!</h3>
+            <hr />
+            <div className="flex">
+              <div>img</div>
+              <p>
+                Eau Claire Tree Service donated to the Django Software
+                Foundation to support Django development. Donate today!
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3>Lastest News</h3>
+            <hr />
+            <h4> DSF calls for applicants for a Django Fellow</h4>
+            <p>
+              The Django Software Foundation is again looking to hire a Django
+              Fellow to work on Django on a full-time basis.
+            </p>
+            <div>Posted by Frank Wiles on 1월 19, 2024</div>
+            <hr />
+            <h4> DSF calls for applicants for a Django Fellow</h4>
+            <p>
+              The Django Software Foundation is again looking to hire a Django
+              Fellow to work on Django on a full-time basis.
+            </p>
+            <div>Posted by Frank Wiles on 1월 19, 2024</div>
+            <a href="">More News {">"}</a>
+          </div>
+          <div></div>
+          <hr />
+          <hr />
+          <hr />
         </div>
       </div>
       <div className="_sub_footer bg-[#44b78b] text-white">sub_footer</div>
